@@ -10,7 +10,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.composedemo2.ui.theme.ComposeDemo2Theme
 
 class MainActivity : ComponentActivity() {
@@ -26,3 +28,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun DemoText(message: String, fontSize: Float) {
+    Text(
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Preview
+@Composable
+fun DemoTextPreview() {
+    ComposeDemo2Theme {
+        DemoText(message = "Welcome to Android", fontSize = 12f)
+    }
+}
